@@ -55,6 +55,7 @@ document.addEventListener("keyup", function(event) {
 })
 
 const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x000000)
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
 const renderer = new THREE.WebGLRenderer();
@@ -63,7 +64,7 @@ document.body.appendChild( renderer.domElement );
 
 // adding sprite render
 
-let sallyTexture = new THREE.TextureLoader().load("sally.png");
+let sallyTexture = new THREE.TextureLoader().load("../assets/sally.png");
 sallyTexture.magFilter = THREE.NearestFilter;
 let sallyMaterial = new THREE.MeshBasicMaterial( { color: 0xffffff, map: sallyTexture, side: THREE.DoubleSide, transparent: true});
 const spriteGeometry = new THREE.PlaneGeometry(1, 1);

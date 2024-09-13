@@ -64,7 +64,7 @@ document.body.appendChild( renderer.domElement );
 
 // adding sprite render
 
-let sallyTexture = new THREE.TextureLoader().load("../assets/sally.png");
+let sallyTexture = new THREE.TextureLoader().load("sally.png");
 sallyTexture.magFilter = THREE.NearestFilter;
 let sallyMaterial = new THREE.MeshBasicMaterial( { color: 0xffffff, map: sallyTexture, side: THREE.DoubleSide, transparent: true});
 const spriteGeometry = new THREE.PlaneGeometry(1, 1);
@@ -78,7 +78,6 @@ camera.position.z = 5;
 function animate() {
     let delta = clock.getDelta(); 
     // todo: make changes here
-    ChangeSprite(delta).then(sally.position.set(sallyPosition.x, sallyPosition.y)); 
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
 };
